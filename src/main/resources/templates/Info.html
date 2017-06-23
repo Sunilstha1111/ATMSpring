@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bank Account Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Bank Account Form</h1>
+<form action="#" th:action="@{/ATM/Info}" th:object="${users}" method="post">
+    <p>Account Number: <input type="text" th:field="*{accountNum}" /></p>
+     <p>Deposit: <input type="radio" value = "Deposit" th:field="*{action}" /></p>
+     <p>Withdrawal: <input type="radio" value ="Withdrawal" th:field="*{action}" /></p>
+    <p>Amount: <input type="text" th:field="*{amount}" /></p>
+    <p>Reason: <input type="text" th:field="*{reason}" /></p>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+</body>
+</html>

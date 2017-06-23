@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Account Summary</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" 
+          href="../../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+  </head>
+
+  <body>
+
+    <h1>Account Summary</h1>
+  
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Acct Number</th>
+        <th>Action</th>
+        <th>Amount</th>
+        <th>Reason</th>
+      </tr>
+      <tr th:each="transac : ${acctSummary}">
+        <td th:text="${transac.id}">ID</td>
+        <td th:text="${transac.accountNum}">Acct Number</td>
+        <td th:text="${transac.action}">Action</td>
+        <td th:text="${transac.amount}">Amount</td>
+        <td th:text="${transac.reason}">Reason</td>
+      </tr>
+    </table>
+  
+    <p>
+      <a href="/ATM/Info">Return to Home</a>
+    </p>
+
+  </body>
+
+</html>
